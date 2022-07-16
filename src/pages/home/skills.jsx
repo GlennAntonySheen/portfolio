@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import _ from 'underscore';
 import react from '../../assets/logo/react.png'
 import nodejs from '../../assets/logo/nodejs.png'
 import js from '../../assets/logo/js.png';
@@ -79,7 +78,7 @@ const SkilStyle = styled(motion.img)`
 const Skils = (props) => {
     return <SkilStyle
         whileHover={{ scale: 1.1, rotate:  -3 }}
-        transition={{ type: "spring", stiffness: 400 }}
+        // transition={{ type: "spring", stiffness: 400 }}
         whileTap={{
             scale: 0.8,
             rotate: -9,
