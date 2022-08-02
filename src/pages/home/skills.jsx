@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import { MouseContext } from '../../App'
 import react from '../../assets/logo/react.png'
 import nodejs from '../../assets/logo/nodejs.png'
 import js from '../../assets/logo/js.png';
@@ -88,39 +89,40 @@ const Skils = (props) => {
 }
 
 export default function Skills() {
-    return (
+    const { cursorVariant, setCursorVariant } = React.useContext(MouseContext);
+    return <>
         <SkilsWrapper>
             <SkilsHeader>Technologies Familier With</SkilsHeader>
             <SkilsContainer>
-                <Skils src={react} />
-                <Skils src={nodejs} />
-                <Skils src={js} />
-                <Skils src={html} />
-                <Skils src={css} />
-                <Skils src={styledComponents} />
-                <Skils src={arduino} />
-                <Skils src={c} />
-                <Skils src={python} />
-                <Skils src={bootstrap} />
-                <Skils src={mui} />
-                <Skils src={figma} />
-                <Skils src={jwt} />
-                <Skils src={moment} />
-                <Skils src={rfh} />
-                <Skils src={mysql} />
-                <Skils src={phpmyadmin} />
-                <Skils src={github} />
-                <Skils src={netlify} />
-                <Skils src={androidStudio} />
-                <Skils src={vscode} />
-                <Skils src={powerpoint} />
-                <Skils src={word} />
-                <Skils src={excel} />
-                <Skils src={photoshop} />
-                <Skils src={illustrator} />
-                <Skils src={premierepro} />
-                <Skils src={vmware} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={react} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={nodejs} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={js} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={html} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={css} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={styledComponents} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={arduino} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={c} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={python} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={bootstrap} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={mui} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={figma} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={jwt} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={moment} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={rfh} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={mysql} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={phpmyadmin} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={github} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={netlify} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={androidStudio} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={vscode} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={powerpoint} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={word} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={excel} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={photoshop} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={illustrator} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={premierepro} />
+                <Skils onMouseEnter={() => setCursorVariant('clickable')} onMouseLeave={() => setCursorVariant('default')} src={vmware} />
             </SkilsContainer>
         </SkilsWrapper>
-    )
+        </>
 }

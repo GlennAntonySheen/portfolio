@@ -12,6 +12,19 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+	font-family: "CascadiaCode";
+	src: local("CascadiaCode"),
+		url("./assets/font/CascadiaCode.ttf") format("truetype");
+	/* font-weight: bold; */
+}
+
+@font-face {
+	font-family: "Poppins-Regular";
+	src: local("Poppins-Regular"),
+		url("./assets/font/Poppins-Regular.ttf") format("truetype");
+}
+
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;

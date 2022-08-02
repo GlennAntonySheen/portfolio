@@ -1,4 +1,4 @@
-import React, { useState,  } from 'react'
+import React, { useState, } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
@@ -6,6 +6,8 @@ import Home from './pages/home';
 import useMouse from "@react-hook/mouse-position";
 
 const MouseCursor = styled(motion.div)`
+	height: 20px;
+	width: 20px;
 	border: 2px solid #2C3333;
 	position: fixed;
 	z-index: 100;
@@ -15,8 +17,6 @@ const MouseCursor = styled(motion.div)`
 	justify-content: center;
 	top: 0;
 	left: 0;
-	height: 10px;
-	width: 10px;
 	background-color: red;
 	border-radius: 50%;
 	pointer-events: none;
@@ -24,6 +24,8 @@ const MouseCursor = styled(motion.div)`
 	text-align: center;
 	font-size: 16px;
 `;
+
+export const MouseContext = React.createContext()
 
 function App() {
 	const cursorSpeed = 1.2;
@@ -49,8 +51,6 @@ function App() {
 	const variants = {
 		default: {
 			opacity: 1,
-			height: 25,
-			width: 25,
 			fontSize: "16px",
 			// backgroundColor: "#1e91d6",
 			x: mouseXPosition - 25 / 2 + cursorSpeed,
@@ -62,53 +62,37 @@ function App() {
 			}
 		},
 		clickable: {
-			scale: 1.1,
-		},
-		contact: {
+			scale: 1.3,
 			opacity: 1,
-			backgroundColor: "#FFBCBC",
-			color: "#000",
-			height: 64,
-			width: 64,
-			fontSize: "32px",
-			x: mouseXPosition - 48,
-			y: mouseYPosition - 48
+			// backgroundColor: "#FFBCBC",
+			// color: "#000",
+			// fontSize: "32px",
+			x: mouseXPosition - 25 / 2 + cursorSpeed,
+			y: mouseYPosition - 25 / 2 + cursorSpeed,
 		},
 		hidden: {
 			opacity: 0,
 		}
 	};
 
-	function projectEnter(event) {
-		setCursorText("View");
-		setCursorVariant("project");
-	}
-
-	function projectLeave(event) {
-		setCursorText("");
-		setCursorVariant("default");
-	}
-
 	return <div ref={ref}>
 		{mouse.x != null && mouse.y != null && <MouseCursor
-			initial={{ 
+			initial={{
 				x: mouseXPosition - 25 / 2 + cursorSpeed,
 				y: mouseYPosition - 25 / 2 + cursorSpeed,
 				opacity: 0,
 			}}
 			variants={variants}
 			animate={cursorVariant}
-			// duration={5}
 		>
 			<span className="cursorText">{cursorText}</span>
 		</MouseCursor>}
-		<Router
-			onMouseEnter={projectEnter}
-			onMouseLeave={projectLeave}
-		>
-			<Routes>
-				<Route path="/" element={<Home />} />
-			</Routes>
+		<Router>
+			<MouseContext.Provider value={{ cursorVariant, setCursorVariant }}>
+				<Routes>
+					<Route path="/" element={<Home />} />
+				</Routes>
+			</MouseContext.Provider>
 		</Router>
 	</div>;
 }
