@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { MouseContext } from '../../App'
+// import { MouseContext } from '../../App'
 import { Typewriter } from 'react-simple-typewriter'
 import Lottie from 'react-lottie';
 import CoverImg from '../../assets/image/introImg.svg'
@@ -61,7 +61,7 @@ const IntroTextContainer = styled.div`
 `;
 
 export default function Intro() {
-    const { cursorVariant, setCursorVariant } = React.useContext(MouseContext);
+    // const { cursorVariant, setCursorVariant } = React.useContext(MouseContext);
     return <IntroWrapper>
         <BackgroungImg src={CoverImg} />
         {/* <h1>{`<Hello World>`}</h1> */}
