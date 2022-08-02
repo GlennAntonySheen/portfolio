@@ -35,9 +35,9 @@ const ForgroundImg = styled(motion.div)`
 `;
 
 const IntroTextContainer = styled.div`
-    /* width: auto; */
-    display: flex;
-    flex-direction: column;
+    width: 490px;
+    /* display: flex;
+    flex-direction: column; */
     left: 3%;
     position: absolute;
     /* padding-left: 2rem; */
@@ -47,16 +47,18 @@ const IntroTextContainer = styled.div`
         font-family: "CascadiaCode";
         font-size: 4em;
         white-space: nowrap;
-        color: #243A73;
+        /* color: #243A73; */
+        color: #212228;
         /* background-color: blue;   */
     }
     
     label {
         width: 550px;
         font-size: 1.5em;
-	    font-family: 'Poppins-Regular';
-        color: #0E185F;
+	    font-family: 'SF Pro Display Regular';
+        color: #14151b;
         /* color: #3F4E4F; */
+        /* background-color: yellow; */
     }
 `;
 
@@ -73,20 +75,30 @@ export default function Intro() {
                     cursor={true}
                     cursorStyle='_'
                     typeSpeed={150}
-                // cursor={false}
                 />
             </h1>
             <motion.label
                 initial={{ opacity: 0, x: -30, y: 30 }}
-                transition={{ type: "spring", stiffness: 100 }}
                 animate={{ opacity: 1, x: 0, y: 0, transition: { delay: 2.5 } }}
-            >I'm Glenn Antony Sheen And I Convert Coffe Into Code.</motion.label>
+                transition={{ type: "spring", stiffness: 100 }}
+            >I'm</motion.label>
+            <motion.label
+                initial={{ opacity: 0, x: -30, y: 30, fontWeight: 'bold', fontSize: '2.2em' }}
+                animate={{ opacity: 1, x: 0, y: 0, transition: { delay: 3 } }}
+                transition={{ type: "spring", stiffness: 100 }}
+            > Glenn Antony Sheen.</motion.label>
+            <motion.label
+                initial={{ opacity: 0, x: -30, y: 30,}}
+                animate={{ opacity: 1, x: 0, y: 0, transition: { delay: 4 } }}
+                transition={{ type: "spring", stiffness: 100 }}
+            > I Convert Coffee Into Code.</motion.label>
+            {/* <motion.label>I Convert Coffee Into Code.</motion.label> */}
         </IntroTextContainer>
         
         <ForgroundImg
             initial={{ x: '-15%', y: '-5%', opacity: 0 }}
-            transition={{ type: "spring", stiffness: 100 }}
             animate={{ x: '70%', y: '-11%', opacity: 1, }}
+            transition={{ type: "spring", stiffness: 100 }}
         >
             <Lottie
                 options={{

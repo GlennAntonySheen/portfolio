@@ -25,6 +25,13 @@ body {
 		url("./assets/font/Poppins-Regular.ttf") format("truetype");
 }
 
+@font-face {
+	font-family: "SF Pro Display Regular";
+	src: local("SF Pro Display Regular"),
+		url("./assets/font/SF Pro Display Regular.ttf") format("truetype");
+}
+
+
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
