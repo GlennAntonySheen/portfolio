@@ -85,7 +85,7 @@ export default function Skills() {
         { skillImg: python, skillName: 'Python 3', level: 3 },
         { skillImg: arduino, skillName: 'Arduino', level: 5 },
         { skillImg: c, skillName: 'C / C++', level: 4 },
-        { skillImg: Bash, skillName: 'Bash', level: 2 },
+        // { skillImg: Bash, skillName: 'Bash', level: 2 },
         { skillImg: styledComponents, skillName: 'Styled Components', level: 5 },
         { skillImg: bootstrap, skillName: 'Bootstrap', level: 5 },
         { skillImg: mui, skillName: 'Material UI', level: 5 },
