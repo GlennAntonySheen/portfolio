@@ -23,6 +23,12 @@ const SplashScreen = styled.div`
 	align-items: center;
 
 	/* background-color: #2C3639; */
+
+	span {
+		position: absolute;
+		bottom: 5vh;
+		color: rgb(119, 120, 120);
+	}
 `;
 
 const LoadingImg = styled(motion.div)`
@@ -76,6 +82,7 @@ export default function Home() {
                     }}
                 />
             </LoadingImg>
+		<span>The contents you are about to see, isn't the final product</span>
 		</SplashScreen>}
 		<HomeWrapper style={{ display: loadedPrimaryAssets ? 'block' : 'none' }}>
 			<PrimaryAssetsContext.Provider value={{ setInitialAssets: setPrimaryAssets }}>
