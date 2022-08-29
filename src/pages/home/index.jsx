@@ -23,6 +23,12 @@ const SplashScreen = styled.div`
 	align-items: center;
 
 	/* background-color: #2C3639; */
+
+	span {
+		position: absolute;
+		bottom: 5vh;
+		color: rgb(119, 120, 120);
+	}
 `;
 
 const LoadingImg = styled(motion.div)`
@@ -50,9 +56,9 @@ export default function Home() {
 	useEffect(() => {
 		var font_CascadiaCode = new FontFaceObserver('CascadiaCode');
 		var font_SFProDisplayRegular = new FontFaceObserver('SF Pro Display Regular');
-		
+	
 		// Promise is returned if every fonts have loaded
-		Promise.all([font_CascadiaCode.load(null, 100000), font_SFProDisplayRegular.load(null, 100000)]).then(function () {
+		Promise.all([font_CascadiaCode.load(null, 100000), font_SFProDisplayRegular.load(null, 100000)]).then( () => {
 			console.log('fonts have loaded');
 			setPrimaryAssets(prevState => ({ ...prevState, allFonts: true }))
 		});
@@ -65,8 +71,8 @@ export default function Home() {
 	return <>
 		{!loadedPrimaryAssets && <SplashScreen>
             <LoadingImg
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 1, scale: 0 }}
+                animate={{ opacity: 1, scale: 1, transition: { duration: .5, ease: 'easeInOut' } }}
             >
                 <Lottie
                     options={{
@@ -76,6 +82,7 @@ export default function Home() {
                     }}
                 />
             </LoadingImg>
+			<span>The contents you are about to see, isn't the final product</span>
 		</SplashScreen>}
 		<HomeWrapper style={{ display: loadedPrimaryAssets ? 'block' : 'none' }}>
 			<PrimaryAssetsContext.Provider value={{ setInitialAssets: setPrimaryAssets }}>
