@@ -44,9 +44,11 @@ const SkilsWrapper = styled.div`
 const SkilsHeader = styled.h1`
     /* height: 100vh; */
     width: 100%;
+    font-size: 2rem;
+    letter-spacing: 2px;
     margin: 0;
-    text-align:center;
-    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial","sans-serif";
+    text-align: center;
+	font-family: 'Poppins-Regular';
     /* background-color: #ad0d0d; */
 `;
 

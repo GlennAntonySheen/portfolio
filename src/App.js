@@ -14,8 +14,8 @@ function App() {
 			<Mouse pageRef={ref} />
 			<Router>
 				<Routes>
-					<Route path="/" element={<Home />} />
-					{/* <Route path="/" element={<Projects />} /> */}
+					<Route path="/home" element={<Home />} />
+					<Route path="/" element={<Projects />} />
 				</Routes>
 			</Router>
 		</MouseContext.Provider>

@@ -69,7 +69,7 @@ export default function Home() {
 
 
 	return <>
-		{!loadedPrimaryAssets && <SplashScreen>
+		{/* {!loadedPrimaryAssets && <SplashScreen>
             <LoadingImg
                 initial={{ opacity: 1, scale: 0 }}
                 animate={{ opacity: 1, scale: 1, transition: { duration: .5, ease: 'easeInOut' } }}
@@ -83,7 +83,7 @@ export default function Home() {
                 />
             </LoadingImg>
 			<span>The contents you are about to see, isn't the final product</span>
-		</SplashScreen>}
+		</SplashScreen>} */}
 		<HomeWrapper style={{ display: loadedPrimaryAssets ? 'block' : 'none' }}>
 			<PrimaryAssetsContext.Provider value={{ setInitialAssets: setPrimaryAssets }}>
 				<Intro loadedPrimaryAssets={loadedPrimaryAssets} />

@@ -103,10 +103,10 @@ export default function Mouse(props) {
             scale: 1.3,
         },
         skillHover: {
-            x: mouseXPosition - 12 / 2 + cursorSpeed,
-            y: mouseYPosition - 12 / 2 + cursorSpeed,
-            width: '12px',
-            height: '12px',
+            x: mouseXPosition - 18 / 2 + cursorSpeed,
+            y: mouseYPosition - 18 / 2 + cursorSpeed,
+            width: '18px',
+            height: '18px',
             transition: {
                 type: "spring",
                 mass: 0.12,

@@ -9,7 +9,7 @@ import Img from '../../assets/lottie/astronaut.json'
 
 
 const IntroWrapper = styled.div`
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     display: flex;
     align-items: center;
@@ -20,8 +20,8 @@ const IntroWrapper = styled.div`
 const BackgroungImg = styled.img`
     height: 100%;
     width: 100%;
-    position: absolute;
-    object-fit: cover;
+    /* position: absolute; */
+    object-fit: fill;
     z-index: -2;
     /* margin-left: 10%; */
 `;
@@ -71,10 +71,10 @@ export default function Intro(props) {
             onLoad={() => {
                 console.log('cover image loaded');
                 setInitialAssets(prevState => ({ ...prevState, coverImg: true }))
-            }
-            }
+            }}
             fetchpriority="low"
-            alt="backgroung image" />
+            alt="backgroung image" 
+        />
         {props.loadedPrimaryAssets && <>
             <IntroTextContainer>
                 <h1>
@@ -102,7 +102,7 @@ export default function Intro(props) {
                 > I Convert Coffee Into Code.</motion.label>
             </IntroTextContainer>
 
-            <ForgroundImg
+            {/* <ForgroundImg
                 initial={{ x: '-15%', y: '-5%', opacity: 0 }}
                 animate={{ x: '70%', y: '-11%', opacity: 1, }}
                 transition={{ type: "spring", stiffness: 100 }}
@@ -114,7 +114,7 @@ export default function Intro(props) {
                         animationData: Img,
                     }}
                 />
-            </ForgroundImg>
+            </ForgroundImg> */}
         </>}
     </IntroWrapper>
 }
